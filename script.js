@@ -26,20 +26,22 @@ document.querySelector(".check").addEventListener("click", function () {
             displayMessage("❌ Escolha apenas de 1 a 20!");
             break breakme;
         }
+        
         // When guess is wrong
-        if (score > 1) {
-            score--;
+        if (score === 0) {
+            title.textContent = "Você perdeu!";
+            displayMessage("Você perdeu o jogo! 💥");
+            document.querySelector(".score").textContent = 0;
+
+            document.body.style.backgroundColor = "#571100";
+        } else if (score > 0) {
+            score -= 2;
+            console.log(score);
             document.querySelector(".score").textContent = score;
 
             guess > randomValue
                 ? displayMessage("📈 Muito alto!")
                 : displayMessage("📉 Muito baixo!");
-        } else {
-            title.textContent = "Você errou!";
-            displayMessage("Você perdeu o jogo! 💥");
-            document.querySelector(".score").textContent = 0;
-
-            document.body.style.backgroundColor = "#571100";
         }
     } else {
         // When guess is right
@@ -63,7 +65,7 @@ document.querySelector(".again").addEventListener("click", function () {
 
     score = 20;
 
-    title.textContent = "Acerte o número!"
+    title.textContent = "Acerte o número!";
     displayMessage("Adivinhe...");
     document.querySelector(".number").textContent = "?";
     document.querySelector(".score").textContent = score;
