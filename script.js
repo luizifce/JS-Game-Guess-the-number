@@ -10,6 +10,7 @@ function displayMessage(message) {
 
 let randomValue = getRandomNumber(1, 21);
 
+let title = document.querySelector(".title");
 let score = Number(document.querySelector(".score").textContent);
 let highscore = Number(document.querySelector(".highscore").textContent);
 let message = document.querySelector(".message");
@@ -34,12 +35,15 @@ document.querySelector(".check").addEventListener("click", function () {
                 ? displayMessage("📈 Muito alto!")
                 : displayMessage("📉 Muito baixo!");
         } else {
-            document.querySelector(".score").textContent = 0;
-            document.body.style.backgroundColor = "#571100";
+            title.textContent = "Você errou!";
             displayMessage("Você perdeu o jogo! 💥");
+            document.querySelector(".score").textContent = 0;
+
+            document.body.style.backgroundColor = "#571100";
         }
     } else {
         // When guess is right
+        title.textContent = "Você acertou!";
         displayMessage("🎉 Número correto!");
         document.querySelector(".number").textContent = randomValue;
 
@@ -59,6 +63,7 @@ document.querySelector(".again").addEventListener("click", function () {
 
     score = 20;
 
+    title.textContent = "Acerte o número!"
     displayMessage("Adivinhe...");
     document.querySelector(".number").textContent = "?";
     document.querySelector(".score").textContent = score;
