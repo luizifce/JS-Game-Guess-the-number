@@ -15,7 +15,7 @@ Primeiramente, basta abrir o arquivo `index.html` em qualquer navegador web.
 2. Você começa com 20 pontos, cada vez que você erra o número você perde 2 pontos, se você chegar a zero pontos, você perde!
 3. Mas se conseguir adivinhar o número, seus pontos serão adicionados ao recorde e você vence!
 
-## Screenshots
+## Screenshots do projeto
 
 ![Screenshot](images/game.png)
 
